@@ -38,7 +38,7 @@ zig build run
 Or, you can find the executable in the `zig-out/bin` directory and run it directly:
 
 ```
-./zig-out/bin/zig-terminal-emulator
+./zig-out/bin/terminal-edno
 ```
 
 ## Usage
