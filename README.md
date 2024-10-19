@@ -54,8 +54,7 @@ Or, you can find the executable in the `zig-out/bin` directory and run it direct
 
 ## Limitations and future plans
 
-- This is a very very basic implementation, as i learn about Zig and does not support advanced features like command history, auto-completion, complex shell operations and so on.
-- Input sanitization is not implemented
+- This is a very very basic implementation, as i learn about Zig and does not support advanced features like auto-completion, complex shell operations, escape sequence handling, and much more which is usually expected.
 
 ## License
 
