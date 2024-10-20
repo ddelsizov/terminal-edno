@@ -1,8 +1,6 @@
 # Terminal Edno
 
-A simple, terminal emulator implemented in Zig.
-
-If you know about "Terminal edno" as a phrase in the bulgarian language, and why its used, you get 10 bonus points. :D
+My first Zig program. Simple implementation of a terminal emulator.
 
 ## Features
 
@@ -45,16 +43,13 @@ Or, you can find the executable in the `zig-out/bin` directory and run it direct
 
 - Type any system command and press Enter to execute it.
 - The command output will be displayed in the terminal.
+- Type `history` to view your command history.
 - Type `exit` to quit the terminal emulator.
-
-## Project Structure
-
-- `src/main.zig`: The main source file containing the terminal emulator logic
-- `build.zig`: The build script for the project
 
 ## Limitations and future plans
 
-- This is a very very basic implementation, as i learn about Zig and does not support advanced features like auto-completion, complex shell operations, escape sequence handling, and much more which is usually expected.
+- Supported on Macos and Linux. No Windows support yet.
+- Does not support advanced features like auto-completion, complex shell operations, escape sequence handling, and much more.
 
 ## License
 
