@@ -1,4 +1,5 @@
 pub const std = @import("std");
+pub const builtin = @import("builtin");
 pub const mem = std.mem;
 pub const io = std.io;
 pub const Child = std.process.Child;
@@ -10,7 +11,14 @@ pub const MAX_HISTORY_SIZE = 128;
 pub fn executeCommand(allocator: mem.Allocator, cmd: []const u8) !void {
     const stdout = io.getStdOut().writer();
 
-    var child = Child.init(&.{ "/bin/sh", "-c", cmd }, allocator);
+    // Define command shell based on OS
+    const shell_cmd = switch (builtin.os.tag) {
+        .windows => &.{ "cmd.exe", "/C", cmd },
+        .macos, .linux => &.{ "/bin/sh", "-c", cmd },
+        else => return error.UnsupportedOS,
+    };
+
+    var child = Child.init(shell_cmd, allocator);
     child.stdout_behavior = .Inherit;
     child.stderr_behavior = .Inherit;
 

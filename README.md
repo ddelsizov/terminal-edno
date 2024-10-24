@@ -27,13 +27,13 @@ My first Zig program. Simple implementation of a terminal emulator.
 
 ## Running the Terminal Emulator
 
-After building, you can run the terminal emulator using:
+You can run the terminal emulator using:
 
 ```
 zig build run
 ```
 
-Or, you can find the executable in the `zig-out/bin` directory and run it directly:
+Or, you can find the executable in the `zig-out/bin`, if you have ran `zig build` and run it directly:
 
 ```
 ./zig-out/bin/terminal-edno
@@ -48,8 +48,7 @@ Or, you can find the executable in the `zig-out/bin` directory and run it direct
 
 ## Limitations and future plans
 
-- Supported on Macos and Linux. No Windows support yet.
-- Does not support advanced features like auto-completion, complex shell operations, escape sequence handling, and much more.
+- Does not support advanced features like auto-completion, complex shell operations, escape sequence handling, input sanitization, and much more.
 
 ## License
 
