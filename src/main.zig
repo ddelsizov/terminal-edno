@@ -20,7 +20,7 @@ pub fn main() !void {
     try stdout.print("Welcome to Terminal edno!\n", .{});
 
     while (true) {
-        try stdout.print("> ", .{});
+        try stdout.print("λ → ", .{});
         var input_buffer: [utils.MAX_INPUT_SIZE]u8 = undefined;
         const input = try stdin.readUntilDelimiterOrEof(&input_buffer, '\n');
 
