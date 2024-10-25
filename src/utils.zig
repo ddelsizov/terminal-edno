@@ -7,6 +7,8 @@ pub const ArrayList = std.ArrayList;
 
 pub const MAX_INPUT_SIZE = 1024;
 pub const MAX_HISTORY_SIZE = 128;
+const red = "\x1b[31m";
+const reset = "\x1b[0m";
 
 pub fn executeCommand(allocator: mem.Allocator, cmd: []const u8) !void {
     const stdout = io.getStdOut().writer();
@@ -29,10 +31,10 @@ pub fn executeCommand(allocator: mem.Allocator, cmd: []const u8) !void {
     switch (result) {
         .Exited => |code| {
             if (code != 0) {
-                try stdout.print("Command exited with non-zero status code: {}\n", .{code});
+                try stdout.print("{s}Command exited with non-zero status code: {}{s}\n", .{ red, code, reset });
             }
         },
-        else => try stdout.print("Command failed to execute\n", .{}),
+        else => try stdout.print("{s}Command failed to execute{s}\n", .{ red, reset }),
     }
 }
 
