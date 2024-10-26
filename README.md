@@ -1,6 +1,8 @@
 # Terminal Edno
 
-My first Zig program. Simple implementation of a terminal emulator.
+My first Zig program. Simple implementation of a terminal emulator. 
+At this phase is just a wrapper over sh / cmd, not full-blown application. 
+Will be gradually updated.
 
 ## Features
 
