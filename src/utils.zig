@@ -1,14 +1,13 @@
-pub const std = @import("std");
-pub const builtin = @import("builtin");
-pub const mem = std.mem;
+const std = @import("std");
+const builtin = @import("builtin");
+const vars = @import("vars.zig");
+const Child = std.process.Child;
+const red = vars.red;
+const reset = vars.reset;
+const max_history_size = vars.MAX_HISTORY_SIZE;
 pub const io = std.io;
-pub const Child = std.process.Child;
+pub const mem = std.mem;
 pub const ArrayList = std.ArrayList;
-
-pub const MAX_INPUT_SIZE = 1024;
-pub const MAX_HISTORY_SIZE = 128;
-const red = "\x1b[31m";
-const reset = "\x1b[0m";
 
 // TODO:
 // Spawn a shell as master / slave process pair, instead of single command execution.
@@ -48,7 +47,7 @@ pub fn printHistory(writer: anytype, history: ArrayList([]const u8)) !void {
 }
 
 pub fn addToHistory(history: *ArrayList([]const u8), allocator: mem.Allocator, cmd: []const u8) !void {
-    if (history.items.len == MAX_HISTORY_SIZE) {
+    if (history.items.len == max_history_size) {
         const oldest = history.orderedRemove(0);
         allocator.free(oldest);
     }

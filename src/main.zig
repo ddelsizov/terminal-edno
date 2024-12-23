@@ -1,5 +1,8 @@
 const std = @import("std");
 const utils = @import("utils.zig");
+const vars = @import("vars.zig");
+
+const max_input_size = vars.MAX_INPUT_SIZE;
 
 pub fn main() !void {
     const stdout = utils.io.getStdOut().writer();
@@ -21,7 +24,7 @@ pub fn main() !void {
 
     while (true) {
         try stdout.print("$> ", .{});
-        var input_buffer: [utils.MAX_INPUT_SIZE]u8 = undefined;
+        var input_buffer: [max_input_size]u8 = undefined;
         const input = try stdin.readUntilDelimiterOrEof(&input_buffer, '\n');
 
         if (input) |cmd| {
