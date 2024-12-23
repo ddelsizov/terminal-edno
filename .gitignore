@@ -2,9 +2,6 @@
 .zig-cache/
 zig-out/
 
-# Executables
-zig-terminal-emulator
-
 # IDE and editor files
 .vscode/
 .idea/
@@ -19,15 +16,7 @@ zig-terminal-emulator
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-# Logs
 *.log
-
-# Dependency directories (if you decide to use any package managers in the future)
 deps/
-
-# Any local configuration files
 *.local
-
-# Environment variables file (if you decide to use one)
 .env

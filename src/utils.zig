@@ -10,6 +10,9 @@ pub const MAX_HISTORY_SIZE = 128;
 const red = "\x1b[31m";
 const reset = "\x1b[0m";
 
+// TODO:
+// Spawn a shell as master / slave process pair, instead of single command execution.
+
 pub fn executeCommand(allocator: mem.Allocator, cmd: []const u8) !void {
     const stdout = io.getStdOut().writer();
 
