@@ -9,9 +9,6 @@ pub const io = std.io;
 pub const mem = std.mem;
 pub const ArrayList = std.ArrayList;
 
-// TODO:
-// Spawn a shell as master / slave process pair, instead of single command execution.
-
 pub fn executeCommand(allocator: mem.Allocator, cmd: []const u8) !void {
     const stdout = io.getStdOut().writer();
 
