@@ -1,8 +1,7 @@
 # Terminal Edno
 
-My first Zig program. Simple implementation of a terminal emulator. 
-At this phase is just a wrapper over sh / cmd, not full-blown application. 
-Will be gradually updated.
+My first Zig program. Simple implementation of a terminal emulator.
+At this phase is just a wrapper over sh / cmd, not full-blown application.
 
 ## Features
 
@@ -27,7 +26,7 @@ Will be gradually updated.
    zig build
    ```
 
-## Running the Terminal Emulator
+## Running the terminal-edno emulator
 
 You can run the terminal emulator using:
 
@@ -51,6 +50,7 @@ Or, you can find the executable in the `zig-out/bin`, if you have ran `zig build
 ## Limitations and future plans
 
 - Does not support advanced features like auto-completion, complex shell operations, escape sequence handling, input sanitization, and much more.
+- No context for navigation. You are in the same dir always.
 
 ## License
 
